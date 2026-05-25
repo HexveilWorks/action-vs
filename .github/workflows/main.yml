@@ -10,7 +10,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: checkout
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v4
 
       - name: terraforminit
         run: terraform -chdir=action-vs/module init
