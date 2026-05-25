@@ -1,0 +1,19 @@
+name: After_long_workflow
+
+on: 
+  workflow_dispatch: 
+
+
+jobs:
+  terraforminit :
+    name: terraforminit
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6.0.2
+
+      - name: terraforminit
+        run: terraform -chdir=action-vs/MODULE init
+
+      - name: terraformvalidate
+        run: terraform -chdir=action-vs/MODULE validate
