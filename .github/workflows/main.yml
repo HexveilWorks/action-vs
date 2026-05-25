@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: terraforminit
-        run: terraform -chdir=action-vs/module init
+        run: terraform -chdir=MODULE init
 
       - name: terraformvalidate
-        run: terraform -chdir=action-vs/module validate
+        run: terraform -chdir=MODULE validate
