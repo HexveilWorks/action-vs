@@ -5,8 +5,8 @@ on:
 
 
 jobs:
-  terraforminit :
-    name: terraforminit
+  terrascanning :
+    name: terraform scanning 
     runs-on: ubuntu-22.04
     
     steps:
@@ -18,16 +18,24 @@ jobs:
         with:
          scan-type: 'fs'
          scan-ref: '.'
-        
+ 
+  terraforminit:
+    name: terraform init 
+    runs-on: self-hosted
 
-      - name: terraforminit
-        run: terraform -chdir=MODULE init
+    steps:
 
-      - name: terraformvalidate
-        run: terraform -chdir=MODULE validate
+     - name: checkout
+       uses: actions/checkout@v4
 
-      - name: terraformplan
-        run: terraform -chdir=MODULE plan
+     - name: terraforminit
+      run: terraform -chdir=MODULE init
+  
+     - name: terraformvalidate
+       run: terraform -chdir=MODULE validate
+  
+     - name: terraformplan
+       run: terraform -chdir=MODULE plan
 
         
 
