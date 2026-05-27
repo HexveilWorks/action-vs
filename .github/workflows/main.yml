@@ -28,14 +28,17 @@ jobs:
      - name: checkout
        uses: actions/checkout@v4
 
-     - name: terraforminit
+     - name: terraform init
        run: terraform -chdir=MODULE init
   
-     - name: terraformvalidate
+     - name: terraform validate
        run: terraform -chdir=MODULE validate
   
-     - name: terraformplan
+     - name: terraform plan
        run: terraform -chdir=MODULE plan
+
+     - name: terraform apply
+       run: terraform -chdir=MODULE apply -auto-approve
 
         
 
