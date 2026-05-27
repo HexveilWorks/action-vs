@@ -26,4 +26,9 @@ jobs:
       - name: terraformvalidate
         run: terraform -chdir=MODULE validate
 
+      - name: terraformplan
+        run: terraform -chdir=MODULE plan
+
+        
+
         
