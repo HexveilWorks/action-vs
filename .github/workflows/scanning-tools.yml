@@ -14,11 +14,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6
         
-      - name: tflint
-        uses: terraform-linters/setup-tflint@v6
+      # - name: tflint
+      #   uses: terraform-linters/setup-tflint@v6
 
-      - name: tfsec
-        uses: aquasecurity/tfsec-action@v1.0.0
+      # - name: tfsec
+      #   uses: aquasecurity/tfsec-action@v1.0.0
+
+      - name: TruffleHog Enterprise scan
+        uses: trufflesecurity/TruffleHog-Enterprise-Github-Action@main
 
 
 
